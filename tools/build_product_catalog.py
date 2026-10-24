@@ -54,13 +54,8 @@ c.setFillColor(white); c.roundRect(42,H-184,326,80,7,stroke=0,fill=1)
 c.drawImage(ImageReader(str(ROOT/'assets'/'powercore-logo.png')),54,H-177,width=300,height=66,preserveAspectRatio=True,anchor='c',mask='auto')
 rtl(c,W-46,H-251,'كتالوج أمثلة المنتجات',24,white,True)
 rtl(c,W-46,H-287,'أفلام حماية الطلاء ونوافذ السيارات',13,LIME,True)
-para(c,W-46,H-326,'نماذج من المنتجات الواردة في مواد وصور التوريد التي شاركتها الشركة. هذا الكتالوج للتعريف بفئات المنتجات، وتُراجع المواصفات والتوفر والسعر لكل طلب على حدة.',W-92,10,18,HexColor('#dbe5ec'))
-# Product image panels
-panel_y=H-570
-for x,img,label,bg in [(47,'ppf-box.png','PAINT PROTECTION FILM',HexColor('#e4e9e1')),(W/2+6,'window-tint-box.png','WINDOW FILM',HexColor('#e1e9ed'))]:
-    c.setFillColor(bg); c.roundRect(x,panel_y, (W-108)/2,178,7,stroke=0,fill=1)
-    c.drawImage(ImageReader(str(ROOT/'assets'/img)),x+11,panel_y+25,width=(W-130)/2,height=130,preserveAspectRatio=True,anchor='c',mask='auto')
-    ltr(c,x+13,panel_y+11,label,7,HexColor('#516879'),True)
+para(c,W-46,H-326,'نبذة عن بعض فئات المنتجات والخدمات التي يمكن تنسيقها. تُراجع المواصفات والتوفر والتكلفة لكل طلب على حدة.',W-92,10,18,HexColor('#dbe5ec'))
+# Product packaging images were removed to protect customer-owned materials.
 rtl(c,W-46,H-609,'مجالات المنتجات',11,white,True)
 pill(c,W-55,H-644,'أفلام حماية الطلاء PPF')
 pill(c,W-55,H-676,'أفلام نوافذ السيارات')
@@ -77,13 +72,13 @@ rtl(c,W-42,H-115,'01  |  أفلام حماية الطلاء',14,NAVY,True)
 para(c,W-42,H-140,'أفلام شفافة لحماية طلاء المركبات، وتختلف طبقات المنتج والسماكة والأطوال بحسب الصنف والمورد.',W-84,9,15,MUTED)
 c.setFillColor(white); c.roundRect(42,H-253,W-84,74,5,stroke=0,fill=1)
 rtl(c,W-58,H-204,'مثال مواصفة وردت في مستندات التوريد',9,NAVY,True)
-rtl(c,W-58,H-231,'PPF  |  سماكة 7.5 mil  |  عرض الرول 152 سم  |  طول المثال 15 م',8,INK,True)
+rtl(c,W-58,H-231,'تُراجع المواصفات المناسبة بحسب نوع المنتج واحتياج العميل.',8,INK,True)
 rtl(c,W-42,H-293,'02  |  أفلام نوافذ السيارات',14,NAVY,True)
 para(c,W-42,H-318,'أفلام بدرجات وخصائص مختلفة للاستخدام على نوافذ السيارات، وتُحدد الدرجة المناسبة والمقاس عند طلب العرض.',W-84,9,15,MUTED)
 c.setFillColor(white); c.roundRect(42,H-443,W-84,94,5,stroke=0,fill=1)
 rtl(c,W-58,H-376,'مسميات ظهرت ضمن ملفات التوريد',9,NAVY,True)
 rtl(c,W-58,H-401,'مطفي  |  أسود لامع  |  زجاج أمامي  |  درجات مرقمة',8.5,INK)
-rtl(c,W-58,H-426,'أمثلة لمقاسات الرولات في السجلات: 152 سم × 15 م / 152 سم × 30 م',8,INK)
+rtl(c,W-58,H-426,'تُحدد المواصفات والمقاسات المناسبة لكل طلب بعد مراجعته.',8,INK)
 rtl(c,W-42,H-484,'قبل اعتماد طلبك',13,NAVY,True)
 items=[
  ('حدد الصنف','PPF أو أفلام نوافذ، والدرجة أو اللون المطلوب.'),

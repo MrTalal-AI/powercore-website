@@ -71,9 +71,8 @@ audiences=[('Retail and e-commerce','Product and supplier search and order prepa
 for i,(title,desc) in enumerate(audiences):
     col=i%2; row=i//2; x=44+col*264; y=H-145-row*77; c.setFillColor(white); c.roundRect(x,y-54,250,66,5,stroke=0,fill=1); txt(c,x+12,y-13,title,8.2,NAVY,True); txt(c,x+12,y-34,desc,7.1,MUTED)
 right(c,W-44,H-320,'Sourcing examples',13,NAVY,True); txt(c,44,H-344,'Product materials shared by the company include:',8,MUTED)
-for i,(title,desc) in enumerate([('Paint protection film (PPF)','Example of automotive protection film rolls.'),('Automotive window films','Example of window film roll sourcing.')]):
+for i,(title,desc) in enumerate([('Automotive window films','Example of window film roll sourcing.')]):
     y=H-372-i*51; c.setFillColor(HexColor('#e8eee8')); c.roundRect(44,y-33,W-88,41,4,stroke=0,fill=1); txt(c,58,y-8,title,8.3,NAVY,True); txt(c,58,y-25,desc,7.2,MUTED)
-    image=ROOT/'assets'/('ppf-box.png' if i==0 else 'window-tint-box.png'); c.drawImage(ImageReader(str(image)),W-108,y-29,width=54,height=32,preserveAspectRatio=True,anchor='c',mask='auto')
 right(c,W-44,H-488,'How to get started',13,NAVY,True)
 steps=['Tell us about your product or project idea.','Share quantity, specifications, or photos if available.','We review the scope, steps, and costs with you.','We coordinate updates through the agreed channel.']
 for i,item in enumerate(steps):
@@ -83,15 +82,14 @@ c.setFillColor(NAVY); c.roundRect(44,61,W-88,71,6,stroke=0,fill=1); txt(c,60,108
 # English product catalog
 f=OUT/'powercore-product-catalog-en.pdf'; c=canvas.Canvas(str(f),pagesize=A4,pageCompression=1)
 c.setTitle('PowerCore Solutions | Product Examples (English)'); c.setAuthor('PowerCore Solutions')
-cover_base(c,'Product Examples','Paint protection and automotive window films','Examples of products shown in sourcing materials and images shared by the company. This catalog introduces product categories. Specifications, availability, and pricing are reviewed for each request.')
-for x,img,label,bg in [(47,'ppf-box.png','PAINT PROTECTION FILM',HexColor('#e4e9e1')),(W/2+6,'window-tint-box.png','WINDOW FILM',HexColor('#e1e9ed'))]:
-    c.setFillColor(bg); c.roundRect(x,H-570,(W-108)/2,178,7,stroke=0,fill=1); c.drawImage(ImageReader(str(ROOT/'assets'/img)),x+11,H-545,width=(W-130)/2,height=130,preserveAspectRatio=True,anchor='c',mask='auto'); txt(c,x+13,H-558,label,6.5,HexColor('#516879'),True)
+cover_base(c,'Product Examples','Sourcing categories and support','An overview of product categories and services that can be coordinated. Specifications, availability, and pricing are reviewed for each request.')
+# Product packaging images were removed to protect customer-owned materials.
 c.showPage(); c.setFillColor(PALE); c.rect(0,0,W,H,stroke=0,fill=1); c.setFillColor(NAVY); c.rect(0,H-83,W,83,stroke=0,fill=1)
 txt(c,42,H-40,'POWERCORE / PRODUCT GUIDE',8,HexColor('#c5d2de'),True); right(c,W-42,H-40,'Categories and Specification Examples',13,white,True)
 txt(c,42,H-115,'01  |  PAINT PROTECTION FILM',12.5,NAVY,True); para(c,42,H-140,'Transparent films for vehicle paint protection. Product layers, thicknesses, and roll lengths vary by item and supplier.',W-84,8.7,14,MUTED)
-c.setFillColor(white); c.roundRect(42,H-253,W-84,74,5,stroke=0,fill=1); txt(c,58,H-204,'Specification example appearing in sourcing documents',8.7,NAVY,True); txt(c,58,H-231,'PPF  |  7.5 mil  |  Roll width 152 cm  |  Example length: 15 m',7.8,INK,True)
+c.setFillColor(white); c.roundRect(42,H-253,W-84,74,5,stroke=0,fill=1); txt(c,58,H-204,'Specifications are reviewed for each request',8.7,NAVY,True); txt(c,58,H-231,'Product requirements are confirmed with the customer before quotation.',7.8,INK,True)
 txt(c,42,H-293,'02  |  AUTOMOTIVE WINDOW FILMS',12.5,NAVY,True); para(c,42,H-318,'Films in different shades and properties. The required shade and size are confirmed when preparing a quote.',W-84,8.7,14,MUTED)
-c.setFillColor(white); c.roundRect(42,H-443,W-84,94,5,stroke=0,fill=1); txt(c,58,H-376,'Product names appearing in sourcing records',8.7,NAVY,True); txt(c,58,H-401,'Matte  |  Glossy black  |  Windshield  |  Numbered shades',8,INK); txt(c,58,H-426,'Example roll sizes in records: 152 cm x 15 m  /  152 cm x 30 m',7.6,INK)
+c.setFillColor(white); c.roundRect(42,H-443,W-84,94,5,stroke=0,fill=1); txt(c,58,H-376,'Product categories seen in sourcing materials',8.7,NAVY,True); txt(c,58,H-401,'Matte  |  Glossy black  |  Windshield  |  Numbered shades',8,INK); txt(c,58,H-426,'Required specifications and sizes are confirmed for each request.',7.6,INK)
 txt(c,42,H-484,'Before confirming an order',12,NAVY,True)
 for i,(title,desc) in enumerate([('Select the item','Choose PPF or window film and the requested shade or finish.'),('Share specifications','Provide size, thickness, roll length, and intended use.'),('Confirm details','Availability, specifications, and packaging are checked before confirming a quote.')]):
     y=H-523-i*58; c.setFillColor(white); c.roundRect(42,y-43,W-84,49,4,stroke=0,fill=1); c.setFillColor(LIME); c.circle(58,y-18,8,stroke=0,fill=1); txt(c,55,y-21,str(i+1),6.5,NAVY,True); txt(c,77,y-14,title,8.3,NAVY,True); txt(c,77,y-31,desc,7.3,MUTED)

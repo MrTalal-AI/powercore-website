@@ -80,11 +80,9 @@ for i,(title,desc) in enumerate(audiences):
     rtl(c,x+232,y-13,title,9,NAVY,True); rtl(c,x+232,y-34,desc,7.7,MUTED)
 rtl(c,W-44,H-320,'أمثلة من مجالات التوريد',13,NAVY,True)
 rtl(c,W-44,H-344,'مواد شاركتها الشركة عن منتجات العناية بالسيارات:',8.7,MUTED)
-for i,(title,desc) in enumerate([('أفلام حماية الطلاء PPF','مثال على رولات أفلام حماية للسيارات.'),('أفلام تظليل وعزل النوافذ','مثال على توريد رولات أفلام نوافذ السيارات.')]):
+for i,(title,desc) in enumerate([('أفلام تظليل وعزل النوافذ','مثال على توريد رولات أفلام نوافذ السيارات.')]):
     y=H-372-i*51; c.setFillColor(HexColor('#e8eee8')); c.roundRect(44,y-33,W-88,41,4,stroke=0,fill=1)
     rtl(c,W-58,y-8,title,9,NAVY,True); rtl(c,W-58,y-25,desc,8,MUTED)
-    sample=ROOT/'assets'/('ppf-box.png' if i==0 else 'window-tint-box.png')
-    c.drawImage(ImageReader(str(sample)),55,y-29,width=54,height=32,preserveAspectRatio=True,anchor='c',mask='auto')
 rtl(c,W-44,H-488,'كيف نبدأ؟',13,NAVY,True)
 steps=['شاركنا نوع المنتج أو فكرة المشروع.','أرسل الكمية والمواصفات أو الصور إن توفرت.','نراجع نطاق الخدمة والخطوات والتكلفة معك.','ننسق التنفيذ والتحديثات عبر قناة التواصل المتفق عليها.']
 for i,s in enumerate(steps):
