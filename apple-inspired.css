@@ -171,6 +171,7 @@ body { background: var(--pc-paper); }
 .service-detail-list li>span:first-child { border-radius: 8px; }
 .service-detail-footer { min-height: 74px; }
 .not-found-header button { border-radius: 999px; }
+.not-found-header>a { padding: 5px 8px; border-radius: 12px; background: #fff; }
 .not-found-orbit { box-shadow: 0 0 0 26px rgba(255,255,255,.018),0 0 0 52px rgba(255,255,255,.012); }
 
 :where(a, button, input, select, textarea, summary):focus-visible { outline-color: #24a7b5; outline-offset: 3px; }
