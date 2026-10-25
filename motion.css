@@ -1,0 +1,168 @@
+:root {
+  --motion-ease: cubic-bezier(.22, .75, .25, 1);
+}
+
+.motion-enabled .motion-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition: opacity 520ms var(--motion-ease), transform 620ms var(--motion-ease);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.motion-enabled .motion-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-copy,
+.projects-hero .container > *,
+.insights-hero .container > *,
+.service-detail-hero > *,
+.not-found-copy > * {
+  animation: motion-enter 650ms var(--motion-ease) both;
+}
+
+.hero-art .cargo-card {
+  animation: cargo-float 7s ease-in-out 900ms infinite;
+}
+
+.pin-dot {
+  animation: route-pulse 3.8s ease-in-out infinite;
+}
+
+.pin-saudi .pin-dot {
+  animation-delay: 900ms;
+}
+
+.main-nav.open > * {
+  animation: menu-item-in 300ms var(--motion-ease) both;
+}
+
+.main-nav.open > *:nth-child(2) { animation-delay: 25ms; }
+.main-nav.open > *:nth-child(3) { animation-delay: 50ms; }
+.main-nav.open > *:nth-child(4) { animation-delay: 75ms; }
+.main-nav.open > *:nth-child(5) { animation-delay: 100ms; }
+.main-nav.open > *:nth-child(6) { animation-delay: 125ms; }
+.main-nav.open > *:nth-child(7) { animation-delay: 150ms; }
+.main-nav.open > *:nth-child(8) { animation-delay: 175ms; }
+
+.menu-toggle,
+.button,
+.language-toggle,
+.floating-whatsapp,
+.project-entry,
+.insight-points section {
+  transition-timing-function: var(--motion-ease);
+}
+
+.menu-toggle {
+  transition: transform 220ms var(--motion-ease), color 180ms ease;
+}
+
+.menu-toggle[aria-expanded="true"] {
+  transform: rotate(90deg);
+}
+
+.button:active,
+.floating-whatsapp:active {
+  transform: translateY(0) scale(.98);
+}
+
+.button span:only-child,
+.button b {
+  transition: transform 220ms var(--motion-ease);
+}
+
+.button:hover span:only-child,
+.button:hover b {
+  transform: translateX(-3px);
+}
+
+[dir="ltr"] .button:hover span:only-child,
+[dir="ltr"] .button:hover b {
+  transform: translateX(3px);
+}
+
+.project-entry,
+.insight-points section {
+  transition: transform 240ms var(--motion-ease), box-shadow 240ms var(--motion-ease);
+}
+
+.project-entry:hover,
+.insight-points section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(20, 51, 70, .08);
+}
+
+.service-icon,
+.audience-icon,
+.trust-icon,
+.knowledge-icon,
+.badge-mark {
+  transition: transform 260ms var(--motion-ease), background-color 260ms ease;
+}
+
+.service-card:hover .service-icon,
+.audience-card:hover .audience-icon,
+.trust-card:hover .trust-icon,
+.knowledge-card:hover .knowledge-icon {
+  transform: translateY(-3px) rotate(-4deg);
+}
+
+.assistant-followups:not([hidden]) {
+  animation: state-reveal 360ms var(--motion-ease) both;
+}
+
+.form-hint {
+  transition: color 220ms ease;
+}
+
+@keyframes motion-enter {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes cargo-float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-5px) rotate(-2deg); }
+}
+
+@keyframes route-pulse {
+  0%, 100% { box-shadow: 0 0 0 8px rgba(213, 228, 74, .13), 0 0 18px rgba(213, 228, 74, .45); }
+  50% { box-shadow: 0 0 0 12px rgba(213, 228, 74, .04), 0 0 23px rgba(213, 228, 74, .7); }
+}
+
+@keyframes menu-item-in {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes state-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .motion-enabled .motion-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-entry:hover,
+  .insight-points section:hover,
+  .service-card:hover .service-icon,
+  .audience-card:hover .audience-icon,
+  .trust-card:hover .trust-icon,
+  .knowledge-card:hover .knowledge-icon {
+    transform: none;
+  }
+}
