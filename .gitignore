@@ -1,0 +1,10 @@
+# Local working and generated deployment artifacts
+/tmp/
+/cloudflare-publish/
+
+# Dependencies and local secrets
+node_modules/
+**/node_modules/
+.env
+.env.*
+!.env.example

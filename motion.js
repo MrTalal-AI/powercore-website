@@ -22,7 +22,7 @@
   revealTargets.forEach((element) => {
     const siblings = element.parentElement ? [...element.parentElement.children] : [];
     const position = siblings.indexOf(element);
-    element.style.setProperty('--motion-delay', `${Math.min(Math.max(position, 0), 4) * 65}ms`);
+    element.classList.add(`motion-delay-${Math.min(Math.max(position, 0), 4)}`);
     element.classList.add('motion-reveal');
   });
 

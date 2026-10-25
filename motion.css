@@ -9,6 +9,12 @@
   transition-delay: var(--motion-delay, 0ms);
 }
 
+.motion-enabled .motion-delay-0 { --motion-delay: 0ms; }
+.motion-enabled .motion-delay-1 { --motion-delay: 65ms; }
+.motion-enabled .motion-delay-2 { --motion-delay: 130ms; }
+.motion-enabled .motion-delay-3 { --motion-delay: 195ms; }
+.motion-enabled .motion-delay-4 { --motion-delay: 260ms; }
+
 .motion-enabled .motion-reveal.is-visible {
   opacity: 1;
   transform: none;
